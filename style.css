@@ -15,6 +15,7 @@ body {
     position: fixed;
     top: -100px;
     left: -100px;
+    z-index: 100;
 }
 
 .circle {
@@ -41,11 +42,11 @@ body {
     size: 50px;
 }
 
-.circle button:focus{
+.circle button:focus {
     outline: none;
 }
 
-.circle button:active{
+.circle button:active {
     transform: scale(0.98);
 }
 
@@ -64,6 +65,9 @@ body {
     width: 100vw;
     padding: 50px;
     transition: transform 0.4s linear;
+    min-height: 100vh;
+    transform-origin: top left;
+    position: relative;
 }
 
 .container.showNav {
@@ -110,10 +114,37 @@ figcaption {
 .footerNav {
     position: fixed;
     z-index: 100;
-
+    bottom: 40px;
+    left: 0;
 }
 
 .footerNavUl {
     color: #fff;
     list-style: none;
+    padding-left: 30px;
+}
+
+.footerNavUl li {
+    margin: 40px 0;
+    transform: translateX(-150px);
+    text-transform: uppercase;
+    transition: transform 0.4s ease-in-out;
+}
+
+.footerNavUl li+li{
+    margin-left: 20px;
+    transform: translateX(-200px)
+}
+
+.footerNavUl li+li+li{
+    margin-left: 40px;
+    transform: translateX(-250px);
+}
+
+.footerNavUl .far {
+    margin-right: 10px;
+}
+
+.container.showNav + .footerNav .footerNavUl li{
+    transform: translateX(0);
 }
