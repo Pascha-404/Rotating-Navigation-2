@@ -5,7 +5,115 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     margin: 0;
     overflow-x: hidden;
+    background-color: #000300;
+}
+
+.circleContainer {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
+
+.circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: #FAFF00;
+    border-radius: 50%;
+    transition: transform .5s ease-in;
+}
+
+.container.showNav .circle {
+    transform: rotate(-70deg);
+}
+
+.circle button {
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    height: 100px;
+    font-size: 26px;
+    border: none;
+    size: 50px;
+}
+
+.circle button:focus{
+    outline: none;
+}
+
+.circle button:active{
+    transform: scale(0.98);
+}
+
+.circle #open {
+    left: 60%;
+}
+
+.circle #close {
+    top: 60%;
+    transform-origin: top left;
+    transform: rotate(90deg);
+}
+
+.container {
+    background-color: #9CA6E7;
+    width: 100vw;
+    padding: 50px;
+    transition: transform 0.4s linear;
+}
+
+.container.showNav {
+    transform-origin: top left;
+    transform: rotate(-20deg);
+}
+
+.content {
+    margin: 50px auto;
+    max-width: 1000px;
+}
+
+.content h1 {
+    text-decoration: underline;
+}
+
+.content small {
+    font-size: 20px;
+    font-style: italic;
+}
+
+.content p {
+    line-height: 1.5;
+    margin: 30px auto;
+}
+
+figure {
+    position: relative;
+}
+
+figure img {
+    max-width: 100%;
+}
+
+figcaption {
+    position: absolute;
+    color: #fff;
+    bottom: 20px;
+    width: 300px;
+    left: 50%;
+    transform: translateX(-45%);
+}
+
+.footerNav {
+    position: fixed;
+    z-index: 100;
+
+}
+
+.footerNavUl {
+    color: #fff;
+    list-style: none;
 }
